@@ -5,26 +5,33 @@
     <title>Holiday & Tax Pro Logbook</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj48cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgcng9IjQwIiBmaWxsPSJ1cmwoI2cpIi8+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT=0iMCIgeTE9IjAiIHgyPSIxODAiIHkyPSIxODAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMxYTczZTgiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwZDQ3YTEiLz48L2xpbmVhckdyYWRpZW50Pjx0ZXh0IHg9IjgwIiB5PSIxMTAiIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSxSb2JvdG8iIGZvbnQtc2l6ZT0iODAiIGZpbGw9IiNmZGM1MzkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSJib2xkIj7CozwvdGV4dD48cGF0aCBkPSJNMTAwIDQwczUgMCAyMCAwTTEwMCA0MHMwIDE1IC01IDM1TTk1IDczczUgMCAyMCAwTTExMCA1NXMwIDAgNSAtMTVNMTEwIDU1czUgNSA1IDE1TTEyMCA3MHMyIDIwIDIwIDIwTTEyMCA3MHMyIDMgMTUgME0xNDAgODVzMiAyIDIwIDBNMTMwIDEwMHMyIDIgMjAgME0xMjUgMTE1czIgMiAyMCAwTTk1IDczczAgMCAtMTUgMjBNODAgOTNczAgMCAxNSAtMjBNODAgOTNczAgMCAwIDIwTTgwIDExM3MyIDIzIDIwIDIzTTgwIDExM3MyIDMgMTUgME0xMDkgOTVzMCAwIDUgLTE1TTEwOSA5NXMyIDE1IC01IDM1TTEwOSA5NXMyIDUgNSAxNU0xMTAgNTlzMCAwIDUgLTE1TTEwMCA0MHMwIDAgLTEwIDE1IiBzdHJva2U9IiNmZmZiZmYiIHN0cm9rZS13aWR0aD0iOCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+">
-    
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='65' x='10' font-family='sans-serif' font-size='60' fill='white'%3E£%3C/text%3E%3Ctext y='90' x='50' font-size='40'%3E🏖️%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='65' x='10' font-family='sans-serif' font-size='60' fill='white'%3E£%3C/text%3E%3Ctext y='90' x='50' font-size='40'%3E🏖️%3C/text%3E%3C/svg%3E">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
     <style>
         :root { --primary: #1a73e8; --secondary: #27ae60; --warning: #f39c12; --danger: #e74c3c; --bg: #f0f2f5; --card-bg: #ffffff; --text: #1a1b1c; --text-muted: #5f6368; --border: #c0c4c9; --input-bg: #ffffff; --year-bg: #e8eaed; --alert-bg: #e6fffa; --alert-border: #38b2ac; --alert-text: #234e52; }
         @media (prefers-color-scheme: dark) { :root { --bg: #121212; --card-bg: #1e1e1e; --text: #e8eaed; --text-muted: #9aa0a6; --border: #44474a; --input-bg: #2d2f31; --year-bg: #2d2f31; --alert-bg: #0d2a27; --alert-border: #34d399; --alert-text: #81e6d9; --secondary: #34d399; } }
-        body { font-family: -apple-system, system-ui, Roboto, sans-serif; background: var(--bg); margin: 0; padding: 12px; color: var(--text); }
+        body { font-family: -apple-system, system-ui, Roboto, sans-serif; background: var(--bg); margin: 0; padding: 12px; color: var(--text); -webkit-font-smoothing: antialiased; }
         .app-container { width: 100%; max-width: 500px; margin: 0 auto; padding-bottom: 50px; }
+        
         .pot-card { background: linear-gradient(135deg, #1a73e8, #0d47a1); color: white; text-align: center; padding: 25px 15px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1); }
         .pot-val { font-size: 42px; font-weight: 800; margin: 5px 0; }
         .pot-sub { font-size: 14px; opacity: 0.9; }
         .tax-header-stat { margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 13px; display: flex; justify-content: space-between; }
+        
         .section { background: var(--card-bg); border-radius: 16px; padding: 18px; margin-bottom: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1.5px solid var(--border); }
         h3 { font-size: 12px; text-transform: uppercase; color: var(--text-muted); border-bottom: 1.5px solid var(--border); padding-bottom: 8px; margin: 0 0 15px 0; letter-spacing: 0.5px; }
         
-        /* FIX FOR OVERLAPPING BOXES */
+        /* MOBILE OVERLAP FIX */
         .flex-row { display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap; }
-        .flex-item { flex: 1; min-width: 140px; } /* Ensures elements don't collapse too small */
+        .flex-item { flex: 1; min-width: 120px; }
         
         label { display: block; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; }
-        input, select, textarea { width: 100%; padding: 14px; border: 1.5px solid var(--border); border-radius: 12px; font-size: 16px; background: var(--input-bg); color: var(--text); -webkit-appearance: none; box-sizing: border-box; }
+        input, select, textarea { width: 100%; padding: 14px; border: 1.5px solid var(--border); border-radius: 12px; font-size: 16px; background: var(--input-bg); color: var(--text); -webkit-appearance: none; box-sizing: border-box; font-family: inherit; }
+        input[type="date"] { color: var(--text-muted); }
+        input[type="date"]:focus { color: var(--text); }
         
         .btn { width: 100%; padding: 18px; border: none; border-radius: 14px; font-weight: 800; font-size: 15px; cursor: pointer; color: white; transition: transform 0.1s; }
         .btn:active { transform: scale(0.97); }
@@ -106,7 +113,7 @@
 </div>
 
 <script>
-    const S_KEY = 'v23_data'; const SET_KEY = 'v23_settings';
+    const S_KEY = 'v24_data'; const SET_KEY = 'v24_settings';
     let entries = JSON.parse(localStorage.getItem(S_KEY)) || [];
     let sets = JSON.parse(localStorage.getItem(SET_KEY)) || { rate: 12.50, pen: 5, tCode: '1257L' };
     document.getElementById('rate').value = sets.rate; document.getElementById('pension').value = sets.pen; document.getElementById('taxCode').value = sets.tCode;
