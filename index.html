@@ -6,39 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgMTgwIj48cmVjdCB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgcng9IjQwIiBmaWxsPSJ1cmwoI2cpIi8+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxODAiIHkyPSIxODAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMxYTczZTgiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwZDQ3YTEiLz48L2xpbmVhckdyYWRpZW50Pjx0ZXh0IHg9IjkwIiB5PSIxMTAiIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSxSb2JvdG8iIGZvbnQtc2l6ZT0iODAiIGZpbGw9IiNmZGM1MzkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtd2VpZ2h0PSJib2xkIj7CozwvdGV4dD48cGF0aCBkPSJNNDAgMTMwczUgOCAyMCAtNXM5IC0yMCAyMCAtMjBTODAgNDAgODAgNDBDNDUgNDUgNDAgNjAgNDAgODB6TTgwIDQwczUgMjAgMjAgMjBTOTAgODAgOTAgODB6TTkwIDgwczAgMCAyMCAtMjBTMTQwIDQwIDE0MCA0MEMxNDAgNzAgMTM1IDc1IDEzNSA3NXpNMTEwIDYwczUgMTUgMTUgMTVTMTMwIDEwMCAxMzAgMTAwek0xMzAgMTAwczAgMCAyMCAtMTVTMTYwIDgwIDE2MCA4MEMxNjAgODAgMTU1IDEzNSAxMzAgMTMwek0xMTUgMTMwczAgMCA1IC0xNU05MCA4MHMyIDIzIDIwIDIzTTgwIDQwczUgMCAyMCAwIiBzdHJva2U9IiMyN2FlNjAiIHN0cm9rZS13aWR0aD0iOCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+">
     <style>
-        :root { --primary: #1a73e8; --secondary: #27ae60; --warning: #f39c12; --danger: #e74c3c; --bg: #f8f9fa; --card-bg: #ffffff; --text: #202124; --text-muted: #70757a; --border: #dadce0; --input-bg: #ffffff; --year-bg: #f1f3f4; --alert-bg: #e6fffa; --alert-border: #b2f5ea; --alert-text: #234e52; }
-        @media (prefers-color-scheme: dark) { :root { --bg: #121212; --card-bg: #1e1e1e; --text: #e8eaed; --text-muted: #9aa0a6; --border: #3c4043; --input-bg: #2d2f31; --year-bg: #2d2f31; --alert-bg: #0d3b36; --alert-border: #0f524a; --alert-text: #81e6d9; --secondary: #34d399; } }
+        :root { 
+            --primary: #1a73e8; --secondary: #27ae60; --warning: #f39c12; --danger: #e74c3c; 
+            --bg: #f0f2f5; --card-bg: #ffffff; --text: #1a1b1c; --text-muted: #5f6368; 
+            --border: #c0c4c9; --input-bg: #ffffff; --year-bg: #e8eaed; 
+            --alert-bg: #e6fffa; --alert-border: #38b2ac; --alert-text: #234e52; 
+        }
+        @media (prefers-color-scheme: dark) { 
+            :root { 
+                --bg: #121212; --card-bg: #1e1e1e; --text: #e8eaed; --text-muted: #9aa0a6; 
+                --border: #44474a; --input-bg: #2d2f31; --year-bg: #2d2f31; 
+                --alert-bg: #0d2a27; --alert-border: #34d399; --alert-text: #81e6d9; --secondary: #34d399; 
+            } 
+        }
         body { font-family: -apple-system, system-ui, Roboto, sans-serif; background: var(--bg); margin: 0; padding: 12px; color: var(--text); }
         .app-container { width: 100%; max-width: 500px; margin: 0 auto; padding-bottom: 50px; }
-        .pot-card { background: linear-gradient(135deg, #1a73e8, #0d47a1); color: white; text-align: center; padding: 25px 15px; border-radius: 20px; box-shadow: 0 10px 20px rgba(26,115,232,0.15); margin-bottom: 15px; }
+        .pot-card { background: linear-gradient(135deg, #1a73e8, #0d47a1); color: white; text-align: center; padding: 25px 15px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1); }
         .pot-val { font-size: 42px; font-weight: 800; margin: 5px 0; }
-        .pot-sub { font-size: 14px; opacity: 0.8; }
-        .tax-header-stat { margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 12px; display: flex; justify-content: space-between; }
-        .section { background: var(--card-bg); border-radius: 16px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid var(--border); }
-        h3 { font-size: 11px; text-transform: uppercase; color: var(--text-muted); border-bottom: 1px solid var(--border); padding-bottom: 8px; margin: 0 0 15px 0; }
-        .flex-row { display: flex; gap: 8px; margin-bottom: 12px; }
-        label { display: block; font-size: 10px; font-weight: 700; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; }
-        input, select, textarea { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 10px; font-size: 16px; box-sizing: border-box; background: var(--input-bg); color: var(--text); }
-        .tax-mini-row { display: flex; align-items: center; justify-content: flex-end; gap: 5px; margin-top: 8px; }
-        #taxCode { width: 65px; padding: 4px; font-size: 11px; text-align: center; }
-        .btn { width: 100%; padding: 16px; border: none; border-radius: 12px; font-weight: 700; font-size: 14px; cursor: pointer; color: white; }
-        .btn-add { background: var(--secondary); color: #000; }
+        .pot-sub { font-size: 14px; opacity: 0.9; }
+        .tax-header-stat { margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 13px; display: flex; justify-content: space-between; }
+        
+        .section { background: var(--card-bg); border-radius: 16px; padding: 18px; margin-bottom: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1.5px solid var(--border); }
+        h3 { font-size: 12px; text-transform: uppercase; color: var(--text-muted); border-bottom: 1.5px solid var(--border); padding-bottom: 8px; margin: 0 0 15px 0; letter-spacing: 0.5px; }
+        
+        .flex-row { display: flex; gap: 10px; margin-bottom: 12px; }
+        label { display: block; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; }
+        input, select, textarea { width: 100%; padding: 14px; border: 1.5px solid var(--border); border-radius: 12px; font-size: 16px; background: var(--input-bg); color: var(--text); -webkit-appearance: none; }
+        
+        .btn { width: 100%; padding: 18px; border: none; border-radius: 14px; font-weight: 800; font-size: 15px; cursor: pointer; color: white; transition: transform 0.1s; }
+        .btn:active { transform: scale(0.97); }
+        .btn-add { background: var(--secondary); color: #000; box-shadow: 0 4px 10px rgba(39, 174, 96, 0.2); }
         @media (prefers-color-scheme: light) { .btn-add { color: white; } }
-        .btn-use { background: var(--warning); }
-        .btn-outline { background: var(--card-bg); color: var(--text); border: 1px solid var(--border); }
-        .payslip-box { margin-top: 15px; padding: 15px; border: 2px dashed var(--border); border-radius: 12px; display: none; background: var(--input-bg); }
-        .ps-line { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 14px; }
-        .move-alert { background: var(--alert-bg); color: var(--alert-text); padding: 12px; border-radius: 10px; font-size: 14px; margin: 12px 0; border: 1px solid var(--alert-border); font-weight: 700; display: flex; justify-content: space-between; }
-        .ps-total { border-top: 1px solid var(--border); padding-top: 10px; font-weight: 800; color: var(--primary); font-size: 18px; display: flex; justify-content: space-between; }
-        .year-header { background: var(--year-bg); color: var(--text); padding: 6px 12px; border-radius: 6px; font-weight: bold; font-size: 11px; margin: 15px 0 8px 0; }
-        .hist-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
-        .del-btn { color: var(--text-muted); border: none; background: none; font-size: 18px; padding: 0 10px; cursor: pointer; }
+        .btn-use { background: var(--warning); box-shadow: 0 4px 10px rgba(243, 156, 18, 0.2); }
+        .btn-outline { background: var(--card-bg); color: var(--text); border: 1.5px solid var(--border); margin-top: 10px; }
+
+        .payslip-box { margin-top: 15px; padding: 18px; border: 2px dashed var(--border); border-radius: 14px; display: none; background: rgba(0,0,0,0.02); }
+        .ps-line { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 15px; }
+        .move-alert { background: var(--alert-bg); color: var(--alert-text); padding: 14px; border-radius: 12px; font-size: 15px; margin: 15px 0; border: 2px solid var(--alert-border); font-weight: 800; display: flex; justify-content: space-between; }
+        .ps-total { border-top: 2px solid var(--border); padding-top: 12px; font-weight: 800; color: var(--primary); font-size: 20px; display: flex; justify-content: space-between; }
+
+        .year-header { background: var(--year-bg); color: var(--text); padding: 8px 14px; border-radius: 8px; font-weight: bold; font-size: 12px; margin: 20px 0 10px 0; border-left: 4px solid var(--primary); }
+        .hist-item { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1.5px solid var(--border); font-size: 15px; }
+        .del-btn { color: var(--danger); border: 1.5px solid var(--border); background: var(--card-bg); font-size: 14px; padding: 6px 10px; border-radius: 8px; cursor: pointer; }
     </style>
 </head>
 <body>
 <div class="app-container">
     <div class="pot-card">
-        <div class="pot-sub">AVAILABLE HOLIDAY POT</div>
+        <div class="pot-sub">TOTAL HOLIDAY POT</div>
         <div class="pot-val" id="potDisplay">£0.00</div>
         <div class="pot-sub" id="hoursDisplay">0.0 hours available</div>
         <div class="tax-header-stat"><span>Extra Tax Paid to Date:</span><span id="taxDisplay">£0.00</span></div>
@@ -46,14 +61,11 @@
 
     <div class="section">
         <h3>⚙️ Global Settings</h3>
-        <div class="flex-row" style="margin-bottom:0;">
+        <div class="flex-row">
             <div style="flex:1"><label>Hourly Rate (£)</label><input type="number" id="rate" value="12.50" step="0.01" oninput="saveS()"></div>
             <div style="flex:1"><label>Pension (%)</label><input type="number" id="pension" value="5" oninput="saveS()"></div>
         </div>
-        <div class="tax-mini-row">
-            <label style="margin:0; font-size:9px;">Tax Code:</label>
-            <input type="text" id="taxCode" value="1257L" oninput="saveS()">
-        </div>
+        <div style="text-align:right"><label style="display:inline; font-size:10px;">Tax Code: </label><input type="text" id="taxCode" value="1257L" style="width:70px; padding:6px; font-size:12px;" oninput="saveS()"></div>
     </div>
 
     <div class="section">
@@ -62,9 +74,9 @@
             <div style="flex:1"><label>Month</label><select id="month"><option value="" disabled selected>Select...</option><option value="0">Jan</option><option value="1">Feb</option><option value="2">Mar</option><option value="3">Apr</option><option value="4">May</option><option value="5">Jun</option><option value="6">Jul</option><option value="7">Aug</option><option value="8">Sep</option><option value="9">Oct</option><option value="10">Nov</option><option value="11">Dec</option></select></div>
             <div style="flex:1"><label>Year</label><select id="year"><option value="" disabled selected>Select...</option><option>2026</option><option>2027</option><option>2028</option></select></div>
         </div>
-        <label>Gross Pay on Slip (£)</label>
+        <label>Total Gross Amount (£)</label>
         <input type="number" id="grossIn" placeholder="Enter Amount" inputmode="decimal">
-        <button class="btn btn-add" style="margin-top:12px;" onclick="addEntry()">Calculate & Save</button>
+        <button class="btn btn-add" style="margin-top:15px;" onclick="addEntry()">Calculate & Save</button>
         <div id="psBox" class="payslip-box">
             <div class="ps-line"><span>Gross:</span><span id="ps-g">£0.00</span></div>
             <div class="ps-line"><span>Pension:</span><span id="ps-p">-£0.00</span></div>
@@ -75,10 +87,10 @@
     </div>
 
     <div class="section">
-        <h3>🏖️ Use Holiday</h3>
+        <h3>🏖️ Use Holiday Pot</h3>
         <div class="flex-row">
             <div style="flex:1"><label>From</label><input type="date" id="hFrom"></div>
-            <div style="flex:1"><label>To</label><input type="date" id="hTo"></div>
+            <div style="flex:1"><label>To (Opt)</label><input type="date" id="hTo"></div>
         </div>
         <div class="flex-row" style="align-items:flex-end;">
             <div style="flex:1"><label>Total Hours Taken</label><input type="number" id="hOut" placeholder="7.5" inputmode="decimal"></div>
@@ -89,7 +101,7 @@
     <div id="histSec" class="section">
         <h3>📅 History</h3>
         <div id="histCont"></div>
-        <button class="btn btn-outline" style="margin-top:15px;" onclick="window.print()">Save as PDF / Print</button>
+        <button class="btn btn-outline" onclick="window.print()">Save as PDF / Print</button>
     </div>
 
     <div class="section">
@@ -101,28 +113,40 @@
 </div>
 
 <script>
-    const S_KEY = 'v21_data'; const SET_KEY = 'v21_settings';
+    const S_KEY = 'v22_data'; const SET_KEY = 'v22_settings';
     let entries = JSON.parse(localStorage.getItem(S_KEY)) || [];
     let sets = JSON.parse(localStorage.getItem(SET_KEY)) || { rate: 12.50, pen: 5, tCode: '1257L' };
     document.getElementById('rate').value = sets.rate; document.getElementById('pension').value = sets.pen; document.getElementById('taxCode').value = sets.tCode;
     document.getElementById('hFrom').valueAsDate = new Date(); document.getElementById('hTo').valueAsDate = new Date();
 
-    function saveS() { sets = { rate: parseFloat(document.getElementById('rate').value), pen: parseFloat(document.getElementById('pension').value), tCode: document.getElementById('taxCode').value.toUpperCase() }; localStorage.setItem(SET_KEY, JSON.stringify(sets)); render(); }
-    function calcTaxNI(gross, penRate, code) { const taxable = gross - (gross * (penRate/100)); const ni = Math.max(0, (taxable - 1048) * 0.08); let allow = 12570; const cNum = parseInt(code.replace(/\D/g,'')); if(!isNaN(cNum)) allow = cNum * 10; const tax = Math.max(0, (taxable - (allow/12)) * 0.20); return { total: ni + tax, p: gross * (penRate/100) }; }
+    function saveS() { sets = { rate: parseFloat(document.getElementById('rate').value) || 0, pen: parseFloat(document.getElementById('pension').value) || 0, tCode: document.getElementById('taxCode').value.toUpperCase() }; localStorage.setItem(SET_KEY, JSON.stringify(sets)); render(); }
+    
+    function calcTaxNI(gross, penRate, code) { 
+        const taxable = gross - (gross * (penRate/100)); 
+        const ni = Math.max(0, (taxable - 1048) * 0.08); 
+        let allow = 12570; const cNum = parseInt(code.replace(/\D/g,'')); if(!isNaN(cNum)) allow = cNum * 10; 
+        const tax = Math.max(0, (taxable - (allow/12)) * 0.20); 
+        return { total: ni + tax, p: gross * (penRate/100) }; 
+    }
 
     function addEntry() {
         const m = document.getElementById('month').value; const y = document.getElementById('year').value; const gross = parseFloat(document.getElementById('grossIn').value);
-        if(m === "" || y === "" || isNaN(gross)) { alert("Select Month/Year!"); return; }
+        if(m === "" || y === "" || isNaN(gross)) { alert("Please select Month/Year and enter Gross Pay!"); return; }
         const hol = (gross / 1.1207) * 0.1207; const actualTax = calcTaxNI(gross, sets.pen, sets.tCode); const theorTax = calcTaxNI(gross - hol, sets.pen, sets.tCode); const extraTax = Math.max(0, actualTax.total - theorTax.total);
         document.getElementById('psBox').style.display = 'block'; document.getElementById('ps-g').innerText = '£' + gross.toFixed(2); document.getElementById('ps-p').innerText = '-£' + actualTax.p.toFixed(2); document.getElementById('ps-t').innerText = '-£' + actualTax.total.toFixed(2); document.getElementById('ps-h').innerText = '£' + hol.toFixed(2); document.getElementById('ps-n').innerText = '£' + (gross - actualTax.p - actualTax.total - hol).toFixed(2);
-        entries.push({ type: 'in', m: m, y: y, amt: hol, gross: gross, extraTax: extraTax }); render();
+        entries.push({ type: 'in', m: m, y: y, amt: hol, gross: gross, extraTax: extraTax }); 
+        render();
+        setTimeout(() => { alert("💰 MOVE TO SAVINGS: Please transfer £" + hol.toFixed(2) + " to your holiday pot now."); }, 300);
     }
 
     function withdraw() {
         const h = parseFloat(document.getElementById('hOut').value); const f = document.getElementById('hFrom').value; const t = document.getElementById('hTo').value;
-        if(!h || !f || !t) { alert("Missing details!"); return; }
-        const d = new Date(f); entries.push({ type: 'out', m: d.getMonth(), y: d.getFullYear(), amt: -(h * sets.rate), hours: h, from: f, to: t });
-        document.getElementById('hOut').value = ''; render();
+        if(!h || !f || !t) { alert("Please enter hours and dates!"); return; }
+        const cost = h * sets.rate; const d = new Date(f);
+        entries.push({ type: 'out', m: d.getMonth(), y: d.getFullYear(), amt: -cost, hours: h, from: f, to: t });
+        document.getElementById('hOut').value = ''; 
+        render();
+        setTimeout(() => { alert("🏖️ WITHDRAW FROM SAVINGS: You can now take £" + cost.toFixed(2) + " out of your holiday pot."); }, 300);
     }
 
     function render() {
@@ -139,16 +163,16 @@
             groups[y].reverse().forEach(e => {
                 const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
                 let title = e.type=='in' ? months[e.m]+' '+e.y : '🏖️ ' + (e.from == e.to ? new Date(e.from).getDate()+' '+months[new Date(e.from).getMonth()] : new Date(e.from).getDate()+' '+months[new Date(e.from).getMonth()]+' - '+new Date(e.to).getDate()+' '+months[new Date(e.to).getMonth()]);
-                cont.innerHTML += `<div class="hist-item"><div><strong>${title}</strong><br><small style="color:var(--text-muted)">${e.type=='in'?'Gross: £'+e.gross.toFixed(2) : e.hours+' hrs'}</small></div><div style="color:${e.type=='in'?'var(--secondary)':'var(--danger)'}; font-weight:bold;">${e.type=='in'?'+':'-'}£${Math.abs(e.amt).toFixed(2)}</div><button class="del-btn" onclick="del(${e.id})">✕</button></div>`;
+                cont.innerHTML += `<div class="hist-item"><div><strong>${title}</strong><br><small style="color:var(--text-muted)">${e.type=='in'?'Gross Slip: £'+e.gross.toFixed(2) : e.hours+' hrs used'}</small></div><div style="color:${e.type=='in'?'var(--secondary)':'var(--danger)'}; font-weight:bold;">${e.type=='in'?'+':'-'}£${Math.abs(e.amt).toFixed(2)}</div><button class="del-btn" onclick="del(${e.id})">✕</button></div>`;
             });
         });
         document.getElementById('potDisplay').innerText = '£' + total.toFixed(2); document.getElementById('taxDisplay').innerText = '£' + totalTax.toFixed(2); document.getElementById('hoursDisplay').innerText = (total/sets.rate).toFixed(1) + ' hours available';
         localStorage.setItem(S_KEY, JSON.stringify(entries)); document.getElementById('backCode').value = btoa(unescape(encodeURIComponent(JSON.stringify({e:entries, s:sets}))));
     }
-    function del(i) { if(confirm("Delete?")) { entries.splice(i,1); render(); } }
-    function copyB() { document.getElementById('backCode').select(); document.execCommand('copy'); alert("Copied!"); }
-    function importB() { const c = prompt("Paste code:"); if(c) { try { const d = JSON.parse(decodeURIComponent(escape(atob(c)))); entries = d.e; sets = d.s; render(); } catch(e) { alert("Error"); } } }
-    function fullR() { if(confirm("Wipe?")) { entries = []; render(); } }
+    function del(i) { if(confirm("Delete this entry?")) { entries.splice(i,1); render(); } }
+    function copyB() { document.getElementById('backCode').select(); document.execCommand('copy'); alert("Code Copied!"); }
+    function importB() { const c = prompt("Paste your recovery code:"); if(c) { try { const d = JSON.parse(decodeURIComponent(escape(atob(c)))); entries = d.e; sets = d.s; render(); } catch(e) { alert("Invalid Code"); } } }
+    function fullR() { if(confirm("This will delete everything. Are you sure?")) { entries = []; render(); } }
     render();
 </script>
 </body>
